@@ -30,6 +30,7 @@ print(1 > 2)
 print(1 < 2)
 print(1 != 2)
 print(1 == 2)
+print()
 
 
 # -------------------------------
@@ -42,5 +43,4 @@ print(1 == 2)
 print("dog" == "cat")
 print("dog" != "cat")
 print("dog" == "dog")
-
 print()
