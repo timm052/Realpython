@@ -12,6 +12,7 @@
 print(42 * True + False)
 print(False * 2 - 3)
 print(True + 0.2 / True)
+print()
 
 
 # -------------------------------
