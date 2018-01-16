@@ -18,8 +18,10 @@ num = 15
 
 if num == 15:
     print("Maths is broken")
-elif num <16:
+elif num < 16:
     print("nah it's cool maths seems to work")
+    if num + 20 = > 20:
+        print("works real well")
 else:
     print("yeah I have no idea what's going on")
 # NOTE: if there is an elif and if statement and both are true on the if
