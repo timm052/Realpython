@@ -36,9 +36,16 @@ print(colours.index("green"))
 # -------------------------------
 
 # copying the contents of one list to anouther is more complicated simply
-# refrencing anouther list will not create a new list but rather a permanet
-# refrence to the first list
+# refrencing anouther list will not create a new list but rather a pointer to
+# animals list
 large_cats = animals
 print(animals)
 animals.append("this should not be here")
 print(large_cats)
+
+# to copy the contents of a list to a new object we need to retrive all obejcts
+# in the  list and add them individualy
+large_cats = animals[:]     # method 1
+large_cats.extend(animals)  # method 2
+print(large_cats)
+print(animals)
