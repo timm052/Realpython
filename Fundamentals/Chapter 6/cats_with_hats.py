@@ -3,10 +3,10 @@ theCats = {}
 loops = 0
 
 #create 100 hatless cats in theCats dictionary
-for i in range(1, 101):
+for i in range(1, 1001):
     theCats["Cat " + str(i)] = False
 
-for i in range(1, 101):
+for i in range(1, 1001):
     loops += 1
     count = 0
     for cat, hats in theCats.items():
