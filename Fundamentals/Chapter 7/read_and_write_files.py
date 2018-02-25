@@ -47,4 +47,29 @@ input_file.close()
 # print(line, end="") double quotes will be blank we could add /n/n
 # to create an extra line after each line
 
-# we can also use .readlines()
+# we can also use .readlines() readlines will keep track of the last line it
+# read while a file is open in "r" (read mode) and read the line after the
+# last read
+input_file = open("input.txt", "r")
+line = input_file.readline()
+
+while line != "":
+    print(line)
+    line = input_file.readline()
+
+input_file.close()
+
+# -------------------------------
+# Example 3
+# -------------------------------
+
+# with can be used to condence the code this creates a new veriable but also a
+# new code block so the closing of the text file handled automaticly
+with open("hello.txt", "r") as my_input_file:
+    for line in my_input_file.readlines():
+        print(line),
+
+# we can open multiple files at one time with the withstatement
+with open("hello.txt", "r") as my_input_file, open("output.txt", "w") as my_output:
+    for line in my_input_file.readlines():
+        my_output.write(line)
