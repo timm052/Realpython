@@ -1,0 +1,19 @@
+{
+	DataType: "Birthdays"
+
+	Format: ".fancy"
+
+	Date: "20/04/2018"
+
+	Version: "1.0"
+}
+
+{
+	Dan: 1/10/2014
+
+	Andrew: 02/09/1988
+	
+	Stalin: 05/04/1956
+	
+	Spuds Mackenzie: 09/09/1999	
+}

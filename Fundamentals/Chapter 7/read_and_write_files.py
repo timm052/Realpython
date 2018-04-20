@@ -73,3 +73,46 @@ with open("hello.txt", "r") as my_input_file:
 with open("hello.txt", "r") as my_input_file, open("output.txt", "w") as my_output:
     for line in my_input_file.readlines():
         my_output.write(line)
+
+# if we want to use a specific part of a of a file the seek() function can be
+# used to jump a certain number of charaters into a file.
+with open("test_format.txt", "rb") as input_file:
+    print ("Line 0 (first line):", input_file.readline())
+    print ("Line 0 again does not work (first line):", input_file.readline())
+
+    input_file.seek(0) # jump to beginning of the document
+    print ("Line 0 can be reprinted after seek(0) (first line):", input_file.readline())
+
+    input_file.seek(15) # jump to charater at index 15
+    print ("Line 0 (starting at the 16th charater):", input_file.readline())
+
+    input_file.seek(3, 2) # jump forward 4 charaters
+    print ("Line 0 (starting at the 16th charater):", input_file.readline())
+
+# NOTE: we can open a file for reading and writing using the r+ command seek
+# aside from finding the beginning or end of file is rarely useful and hard to
+# keep track of. A new seek should be preformed when switching from reading to
+# writing
+
+# *******************************
+# Exercises
+# *******************************
+print()
+
+# Exercise 1
+print("Exercise 1")
+with open("poem.txt", "r") as poem:
+    for line in poem.readlines():
+        print(line)
+
+# Exercise 2
+# see above
+
+# Exercise 3
+with open("output.txt", "w") as output_file, open("poem.txt", "r") as input_file:
+    for line in input_file:
+        output_file.writelines(line)
+
+# Exercise 4
+with open("output.txt", "w") as append_file:
+    append_file.writelines("Hahahahahaha a new line")
