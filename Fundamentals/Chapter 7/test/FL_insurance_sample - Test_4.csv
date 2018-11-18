@@ -1,0 +1,6 @@
+policyID,statecode,county,eq_site_limit,hu_site_limit,fl_site_limit,fr_site_limit,tiv_2011,tiv_2012,eq_site_deductible,hu_site_deductible,fl_site_deductible,fr_site_deductible,point_latitude,point_longitude,line,construction,point_granularity
+333818,FL,COLUMBIA COUNTY,0,455754.6,0,455754.6,455754.6,696809.59,0,0,0,0,30.1515,-82.6126,Residential,Masonry,4
+254323,FL,COLUMBIA COUNTY,0,1552693.95,0,0,1552693.95,1552594.58,0,0,0,0,30.1515,-82.6126,Residential,Masonry,4
+247444,FL,COLUMBIA COUNTY,0,8910,0,8910,8910,13521.83,0,0,0,0,30.1515,-82.6126,Residential,Wood,4
+882598,FL,COLUMBIA COUNTY,0,398968.2,0,398968.2,398968.2,424087.24,0,0,0,0,30.1515,-82.6126,Residential,Masonry,4
+386918,FL,COLUMBIA COUNTY,0,4500,0,4500,4500,4238.41,0,0,0,0,30.1515,-82.6126,Residential,Wood,4
