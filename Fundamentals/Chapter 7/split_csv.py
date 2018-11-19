@@ -1,7 +1,8 @@
 #%%
 import argparse
 import csv
-import sys, os 
+import sys, os
+import progressbar 
 
 #%%
 def main():
@@ -10,8 +11,8 @@ def main():
     description = "An application for spliting csv files")
 
     parser.add_argument('-i', '--input', type = str, help = 'input file location as path')
-    parser.add_argument('-o', '--output', type = str, help = 'output file location as path')
-    parser.add_argument('-r', '--rowlimit', type = int, help = 'row limit to split as int')
+    parser.add_argument('-o', '--output', type = str, help = 'output file location as path - default is input location')
+    parser.add_argument('-r', '--rowlimit', type = int, help = 'row limit to split as int - default is 25 ')
 
     args = parser.parse_args()
     
@@ -39,6 +40,7 @@ def main():
     splitcsv(input_file_location, output_file_location, rowlimit)        
 
 #%%
+#
 def checkForInput(input_file):
     if input_file == None:
         sys.exit("error: no input file location use -h for help") 
@@ -75,25 +77,29 @@ def splitcsv(inputpath, outputpath, row_limit):
     with open(inputpath) as open_file:
         open_file_reader = csv.reader(open_file)
         header = next(open_file_reader)
+        filename = os.path.basename(inputpath)
+
+        count = 0
         loop = 0
         part_number = 0
-        filename = os.path.basename(inputpath)
         list_rows = []
 
         for row in open_file_reader:
             list_rows.append(row)
-
+        bar = progressbar.ProgressBar(max_value=(len(list_rows)))
+        
         while (part_number*row_limit) < len(list_rows):
             # create numbered output file, open in cs writer and write header row
             with open((outputpath + "\\" + filename[0:-4] + "_" + str(part_number)) + ".csv", "w", newline='') as output:
                 open_file_writer = csv.writer(output)
                 open_file_writer.writerow(header)
-                
                 # write 
                 for row in list_rows[part_number*row_limit:]:
                     if loop < row_limit:
                         open_file_writer.writerow(row)
                         loop += 1
+                        count += 1
+                        bar.update(count)
                     else:
                         break
                 loop = 0
